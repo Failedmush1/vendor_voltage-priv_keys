@@ -9,7 +9,7 @@ croot && git clone https://github.com/Failedmush1/vendor_voltage-priv_keys vendo
 ```bash
 cd vendor/lineage-priv/keys
 ```
-
+cd vendor/voltage-priv/keys
 ```
 ./keys.sh
 ```
