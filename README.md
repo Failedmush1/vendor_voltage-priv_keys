@@ -3,7 +3,7 @@
 # Usage
 
 ```bash
-croot && git clone https://github.com/VoltageOS/vendor_voltage-priv_keys vendor/voltage-priv/keys
+croot && git clone [(https://github.com/Failedmush1/vendor_voltage-priv_keys} vendor/voltage-priv/keys
 ```
 
 ```bash
