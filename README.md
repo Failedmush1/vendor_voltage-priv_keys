@@ -1,22 +1,24 @@
-# voltage-priv_keys-template
+# LineageOS Private Keys (A13-A15-Los)
 
-# Usage
+This branch contains the unique private signing keys formatted specifically for LineageOS-based ROMs from Android 13 through Android 15.
 
-```bash
-croot && git clone https://github.com/Failedmush1/vendor_voltage-priv_keys vendor/voltage-priv/keys
+## Maintainer Info
+- **Maintainer:** Failedmush
+- **Country:** JP
+
+## Setup in Device Tree
+Add the following to your `lineage_renoir.mk` (or equivalent):
+
+```makefile
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
+-include vendor/lineage-priv/keys/keys.mk
 ```
 
+## Key Files
+- Standard LineageOS/AOSP key set, including `gmscompat_lib`.
+
+## Usage
+Clone this branch into the standard LineageOS private key location:
 ```bash
-cd vendor/voltage-priv/keys
-
-```bash
-./keys.sh
-
-# Testing
-
-Included `check_keys.py` script checks whether all apk/apex/capex files in the build out are signed with keys within its directory. Be aware that some targets are **expected** to be signed with vendor key, for example `com.android.apex.cts.shim.v1_prebuilt`.
-
-```
-$ ./check_keys.py ~/voltage/out/target/product/lynx
-/home/ab/voltage/out/target/product/lynx/obj/ETC/com.android.apex.cts.shim.v1_prebuilt_intermediates/com.android.apex.cts.shim.apex is signed with an unknown key!
+git clone https://github.com/Failedmush1/vendor_voltage-priv_keys -b A13-A15-Los vendor/lineage-priv/keys
 ```
