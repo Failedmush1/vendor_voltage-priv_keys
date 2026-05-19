@@ -1,24 +1,24 @@
-# evolution-priv_keys-template
+# Android Private Keys (A13-aosp)
 
-# Usage
+This branch contains the unique private signing keys for your AOSP-based Android 13 builds.
 
+## Maintainer Info
+- **Maintainer:** Failedmush
+- **Country:** JP
+
+## Setup in Device Tree
+Add the following to your `lineage_renoir.mk` (or equivalent):
+
+```makefile
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/extra/keys/releasekey
+-include vendor/extra/keys/keys.mk
+```
+
+## Key Files
+- `releasekey`, `platform`, `shared`, `media`, `networkstack`, `sdk_sandbox`, `bluetooth`, `nfc`, `verifiedboot`, `gmscompat_lib`
+
+## Usage
+Clone this branch directly into your build tree:
 ```bash
-croot && git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys
-```
-
-```bash
-cd vendor/evolution-priv/keys
-```
-
-```
-./keys.sh
-```
-
-# Testing
-
-Included `check_keys.py` script checks whether all apk/apex/capex files in the build out are signed with keys within its directory. Be aware that some targets are **expected** to be signed with vendor key, for example `com.android.apex.cts.shim.v1_prebuilt`.
-
-```
-$ ./check_keys.py ~/evolution/out/target/product/lynx
-/home/ab/evolution/out/target/product/lynx/obj/ETC/com.android.apex.cts.shim.v1_prebuilt_intermediates/com.android.apex.cts.shim.apex is signed with an unknown key!
+git clone https://github.com/Failedmush1/vendor_voltage-priv_keys -b A13-aosp vendor/extra/keys
 ```
