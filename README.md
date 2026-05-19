@@ -1,10 +1,21 @@
-# LineageOS Base Template (lineageos)
+# LineageOS Private Keys (A16)
 
-This branch serves as the base template for LineageOS private key repositories. It contains the standard directory structure and configuration files required for LineageOS-based ROM signing.
+This branch contains the unique private signing keys formatted for LineageOS-based ROMs starting from Android 16.
 
-## Branches
-- **A13-aosp:** Keys for AOSP-based Android 13 builds.
-- **A13-A15-Los:** Keys for standard LineageOS builds (Android 13-15).
+## Maintainer Info
+- **Maintainer:** Failedmush
+- **Country:** JP
+
+## Setup in Device Tree
+Add the following to your device makefile:
+
+```makefile
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
+-include vendor/lineage-priv/keys/keys.mk
+```
 
 ## Usage
-It is recommended to use one of the version-specific branches for actual signing.
+Clone this branch into the standard LineageOS private key location:
+```bash
+git clone https://github.com/Failedmush1/vendor_voltage-priv_keys -b lineageos vendor/lineage-priv/keys
+```
