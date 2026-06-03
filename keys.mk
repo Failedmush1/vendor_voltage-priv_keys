@@ -86,7 +86,7 @@ PRODUCT_CERTIFICATE_OVERRIDES += \
     WifiDialog:com.android.wifi.dialog.certificate.override \
     GmscompatLib:gmscompat_lib.certificate.override
 
-PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/voltage-priv/keys/releasekey
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
 PRODUCT_EXTRA_RECOVERY_KEYS :=
-PRODUCT_CERTIFICATE_GMSCOMPAT_LIB := vendor/voltage-priv/keys/gmscompat_lib
+PRODUCT_CERTIFICATE_GMSCOMPAT_LIB := vendor/lineage-priv/keys/gmscompat_lib
 PRODUCT_MAINLINE_BLUETOOTH_SEPOLICY_DEV_CERTIFICATES := $(dir $(PRODUCT_DEFAULT_DEV_CERTIFICATE))
