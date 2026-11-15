@@ -1,21 +1,19 @@
-# LineageOS Private Keys (A16)
+# AOSPA Private Keys (A14)
 
-This branch contains the unique private signing keys formatted for LineageOS-based ROMs starting from Android 16.
+This branch contains the unique private signing keys formatted for Paranoid Android (AOSPA) Android 14 (Uvite).
 
 ## Maintainer Info
 - **Maintainer:** Failedmush
 - **Country:** JP
 
-## Setup in Device Tree
-Add the following to your device makefile:
-
-```makefile
-PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
--include vendor/lineage-priv/keys/keys.mk
+## Usage
+Clone this branch into the standard AOSPA private key location:
+```bash
+git clone https://github.com/Failedmush1/vendor_voltage-priv_keys -b aospa vendor/aospa-priv/keys
 ```
 
-## Usage
-Clone this branch into the standard LineageOS private key location:
-```bash
-git clone https://github.com/Failedmush1/vendor_voltage-priv_keys -b lineageos vendor/lineage-priv/keys
+## Setup in Tree
+Include in `vendor/aospa/target/product/aospa-target.mk` or device tree:
+```makefile
+-include vendor/aospa-priv/keys/keys.mk
 ```
